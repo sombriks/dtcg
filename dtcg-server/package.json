@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r esm src/main.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/sombriks/dtcg/issues"
   },
-  "homepage": "https://github.com/sombriks/dtcg#readme"
+  "homepage": "https://github.com/sombriks/dtcg#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "socket.io": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
