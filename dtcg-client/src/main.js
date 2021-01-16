@@ -1,5 +1,10 @@
-import io from "socket.io-client"
+import Soc from "socket.io-client";
 
-console.log(io)
+const io = Soc(process.env.API_URL || "http://localhost:3000");
+console.log(io);
 
-console.log("teste2")
+setTimeout(() => {
+  io.emit("haha", { haha: true });
+}, 1000);
+
+console.log("teste2");

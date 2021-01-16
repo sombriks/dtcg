@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r esm src/main.js"
+    "dev": "NODE_ENV=development nodemon -r esm -r dotenv-flow/config app/main.js",
+    "start": "node -r esm -r dotenv-flow/config app/main.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/sombriks/dtcg#readme",
   "dependencies": {
+    "dotenv-flow": "^3.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "socket.io": "^3.0.5"

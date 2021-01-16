@@ -1,5 +1,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const { DefinePlugin } = require("webpack");
+const dotenv = require("dotenv-flow");
 
 module.exports = {
   mode: process.env.NODE_ENV || "development",
@@ -14,8 +16,11 @@ module.exports = {
     port: 8080,
   },
   plugins: [
+    new DefinePlugin({
+      "process.env": JSON.stringify(dotenv.config().parsed),
+    }),
     new CopyPlugin({
-      patterns: [{ from: "public/"}],
+      patterns: [{ from: "public/" }],
     }),
   ],
 };
