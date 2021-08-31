@@ -1,8 +1,11 @@
 import { Scene } from "phaser";
 
 export class Lobby extends Scene {
-
-  update(time,delta){
-    console.log(delta)
+  constructor(config) {
+    super(config);
+    this.io = config.io;
+  }
+  preload(){
+    this.io.emit("haha",{from:"Lobby"})
   }
 }

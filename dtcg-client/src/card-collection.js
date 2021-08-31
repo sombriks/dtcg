@@ -1,3 +1,11 @@
 import { Scene } from "phaser";
 
-export class CardCollection extends Scene {}
+export class CardCollection extends Scene {
+  constructor(config) {
+    super(config);
+    this.io = config.io;
+  }
+  preload(){
+    this.io.emit("haha",{from:"CardCollection"})
+  }
+}

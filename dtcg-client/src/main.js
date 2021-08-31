@@ -10,23 +10,20 @@ import { Battle } from "./battle";
 
 const io = Soc(process.env.API_URL || "http://localhost:3000");
 
-setTimeout(() => {
-  io.emit("haha", { haha: true });
-}, 1000);
+const lobby = new Lobby({ io, default: true });
+const bigMap = new BigMap({ io });
+const cardCollection = new CardCollection({ io });
+const decks = new Decks({ io });
+const localMap = new LocalMap({ io });
+const squareDetail = new SquareDetail({ io });
+const battle = new Battle({ io });
 
-window.game = new Phaser.Game({
+const game = new Phaser.Game({
   type: Phaser.AUTO,
-  width: 800,
+  width: 600,
   height: 600,
-  scene: [
-    new Lobby(),
-    new BigMap(),
-    new CardCollection(),
-    new Decks(),
-    new LocalMap(),
-    new SquareDetail(),
-    new Battle()
-  ],
+  scene: [bigMap, cardCollection, decks, localMap, squareDetail, battle, lobby],
   disableContextMenu: process.env.NODE_ENV != "development",
 });
 
+if(process.env.NODE_ENV == "development") window.game = game;
