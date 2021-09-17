@@ -25,6 +25,12 @@ const game = new Phaser.Game({
   height: 600,
   scene: [lobby, bigMap, cardCollection, decks, localMap, squareDetail, battle],
   disableContextMenu: process.env.NODE_ENV != "development",
+  scale: {
+    mode: Phaser.Scale.RESIZE,
+    parent: "app",
+    width: '100%',
+    height: '100%'
+},
 });
 
 if (process.env.NODE_ENV == "development") window.game = game;
