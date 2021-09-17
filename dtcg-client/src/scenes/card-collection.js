@@ -1,4 +1,5 @@
 import { Scene } from "phaser";
+import { clickThing } from "../utils/click-thing";
 
 export class CardCollection extends Scene {
   constructor(config) {
@@ -7,5 +8,9 @@ export class CardCollection extends Scene {
   }
   preload(){
     this.io.emit("haha",{from:"CardCollection"})
+    this.load.image("location", "assets/location_t.png");
+  }
+  create() {
+    clickThing(this, "From CardCollection", "location", "decks");
   }
 }
