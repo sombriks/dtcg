@@ -8,7 +8,7 @@ export class SquareDetail extends Scene {
   }
   preload() {
     this.io.emit("haha", { from: "SquareDetail" });
-    this.load.image("gear", "assets/gear_t.png");
+    this.load.image("gear", "assets/images/gear_t.png");
   }
   create() {
     clickThing(this, "From SquareDetail", "gear", "lobby");

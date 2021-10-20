@@ -8,7 +8,7 @@ export class CardCollection extends Scene {
   }
   preload(){
     this.io.emit("haha",{from:"CardCollection"})
-    this.load.image("location", "assets/location_t.png");
+    this.load.image("location", "assets/images/location_t.png");
   }
   create() {
     clickThing(this, "From CardCollection", "location", "decks");

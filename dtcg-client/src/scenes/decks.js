@@ -8,7 +8,7 @@ export class Decks extends Scene {
   }
   preload() {
     this.io.emit("haha", { from: "Decks" });
-    this.load.image("fix", "assets/fix_t.png");
+    this.load.image("fix", "assets/images/fix_t.png");
   }
   create() {
     clickThing(this, "From Decks", "fix", "local-map");

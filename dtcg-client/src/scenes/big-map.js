@@ -8,7 +8,7 @@ export class BigMap extends Scene {
   }
   preload() {
     this.io.emit("haha", { from: "BigMap" });
-    this.load.image("magnifier", "assets/magnifier_t.png");
+    this.load.image("magnifier", "assets/images/magnifier_t.png");
   }
   create() {
     clickThing(this, "From BigMap", "magnifier", "card-collection");

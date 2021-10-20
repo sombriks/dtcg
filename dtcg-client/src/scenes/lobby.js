@@ -8,7 +8,7 @@ export class Lobby extends Scene {
   }
   preload() {
     this.io.emit("haha", { from: "Lobby" });
-    this.load.image("lamp", "assets/lamp_t.png");
+    this.load.image("lamp", "assets/images/lamp_t.png");
   }
   create() {
     clickThing(this, "From lobby", "lamp", "big-map");
