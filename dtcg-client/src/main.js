@@ -21,16 +21,22 @@ const battle = new Battle({ io, key: "battle" });
 const game = new Phaser.Game({
   parent: document.getElementById("app"),
   type: Phaser.AUTO,
-  width: 600,
-  height: 600,
   scene: [lobby, bigMap, cardCollection, decks, localMap, squareDetail, battle],
   disableContextMenu: process.env.NODE_ENV != "development",
   scale: {
-    mode: Phaser.Scale.RESIZE,
+    mode: Phaser.Scale.ENVELOP,
     parent: "app",
-    width: '100%',
-    height: '100%'
-},
+    width: 480,
+    height: 480,
+    min: {
+      width: 320,
+      height: 320
+    },
+    max: {
+        width: 800,
+        height: 800
+    }
+  }
 });
 
 if (process.env.NODE_ENV == "development") window.game = game;
