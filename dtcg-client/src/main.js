@@ -21,7 +21,7 @@ const battle = new Battle({ io, key: "battle" });
 const game = new Phaser.Game({
   parent: document.getElementById("app"),
   type: Phaser.AUTO,
-  scene: [lobby, bigMap, cardCollection, decks, localMap, squareDetail, battle],
+  scene: [localMap, lobby, bigMap, cardCollection, decks, squareDetail, battle],
   disableContextMenu: process.env.NODE_ENV != "development",
   scale: {
     mode: Phaser.Scale.ENVELOP,
